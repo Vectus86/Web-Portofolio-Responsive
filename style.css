@@ -273,6 +273,13 @@ header .follow a:hover {
 
 .about .row-2 .skills .progress {
   padding: 1rem 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
 }
 
 .about .row-2 .skills .progress h3 {
@@ -285,35 +292,169 @@ header .follow a:hover {
 }
 
 .about .row-2 .skills .progress .bar {
+  position: relative;
+  height: 10px;
   width: 100%;
-  background: #ccc;
-  overflow: hidden;
-  height: 1rem;
-  border-radius: 50rem;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
 .about .row-2 .skills .progress .bar span {
-  display: block;
   height: 100%;
-  background: var(--main-color);
-  border-radius: 50rem;
+  width: 80%;
+  background: red;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
-
-.about .row-2 .skills .progress:nth-child(1) .bar span {
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+.about .row-2 .skills .progress:nth-child(1) .bar.web span {
   width: 95%;
 }
 
-.about .row-2 .skills .progress:nth-child(2) .bar span {
+.about .row-2 .skills .progress:nth-child(2) .bar.ui span {
   width: 85%;
 }
 
-.about .row-2 .skills .progress:nth-child(3) .bar span {
+.about .row-2 .skills .progress:nth-child(3) .bar.dev span {
   width: 80%;
 }
 
-.about .row-2 .skills .progress:nth-child(4) .bar span {
+.about .row-2 .skills .progress:nth-child(4) .bar.seo span {
   width: 65%;
 }
+
+/* Skill 2 */
+/* .skills-bar {
+  width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skills-bar .bar {
+  margin: 20px 0;
+}
+
+.skills-bar .bar:first-child {
+  margin-top: 0px;
+}
+
+.skills-bar .bar .info {
+  margin-bottom: 5px;
+}
+
+.skills-bar .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+
+.skills-bar .bar .progres-link {
+  position: relative;
+  height: 10px;
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.05), 0px 1px rgba(255, 255, 255, 0.8);
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progres-link span {
+  height: 100%;
+  width: 80%;
+  background: #6665ee;
+  position: absolute;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progres-link.html span {
+  width: 90%;
+}
+.progres-link.css span {
+  width: 70%;
+}
+.progres-link.java span {
+  width: 35%;
+}
+.progres-link.py span {
+  width: 20%;
+} */
+
+/* .bar .progres-link span::before {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: -10px;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+.bar .progres-link span::after {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  background: #000;
+  padding: 1px 8px;
+  border-radius: 3px;
+  opacity: 0;
+  animation: showText2 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText2 {
+  100% {
+    opacity: 1;
+  }
+}
+
+.progres-link.html span::after {
+  content: '90%';
+}
+.progres-link.css span::after {
+  content: '70%';
+}
+.progres-link.java span::after {
+  content: '35%';
+}
+.progres-link.py span::after {
+  content: '20%';
+} */
 
 .about .row-2 .box-container {
   flex: 1 1 40rem;
