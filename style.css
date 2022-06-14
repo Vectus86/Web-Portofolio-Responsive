@@ -753,6 +753,17 @@ header .follow a:hover {
   border-radius: 5px;
   z-index: 2;
 }
+
+button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 3rem;
+  background: var(--main-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: 5px;
+}
 /* media queries  */
 @media (max-width: 991px) {
   html {

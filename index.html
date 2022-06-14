@@ -81,7 +81,7 @@
             </div>
           </div>
           <a href="" class="btn">Download CV</a>
-          <a href="" class="btn">Hire Me</a>
+          <a href="#contact" class="btn">Hire Me</a>
         </div>
       </div>
 
@@ -319,15 +319,17 @@
       </div>
 
       <div class="row">
-        <form action="">
-          <input type="name" placeholder="Name" class="box" />
-          <input type="email" placeholder="Email" class="box" />
-          <input type="number" placeholder="Number" class="box" />
+        <form onsubmit="sendEmail(); reset(); return false;">
+          <input type="name" placeholder="Name" class="box" id="name"/>
+          <input type="email" placeholder="Email" class="box" id="email"/>
+          <input type="number" placeholder="Number" class="box" id="number"/>
+          
 
-          <textarea name="" placeholder="Message" id="" cols="30" rows="10"></textarea>
+          <textarea placeholder="Message" id="message" cols="30" rows="10" ></textarea>
 
-          <input type="submit" class="btn" value="send message" />
+          <button type="submit" class="btn">Send Message</button>
         </form>
+        
         <iframe
           class="map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16327779.509475226!2d108.8231535084713!3d-2.4151364630984675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c4c07d7496404b7%3A0xe37b4de71badf485!2sIndonesia!5e0!3m2!1sid!2sid!4v1654763444448!5m2!1sid!2sid"
@@ -344,5 +346,21 @@
     <a href="#home" class="gotop"><i class="fas fa-arrow-up" ></i></i></a>
 
     <script src="app.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          secureToken: '5bc6df06-fb6f-422b-99a7-f25061a296fc',
+          Host: 'smtp.elasticemail.com',
+          Username: 'calvinlawrence98@gmail.com',
+          Password: 'C69832E5054AF99E3242F110386EE4BAB6EF',
+          To: 'calvinlawrence98@gmail.com',
+          From: document.getElementById('email').value,
+          Subject: 'New Contact Form Enquiry',
+          Body:
+            'Name : ' + document.getElementById('name').value + '<br> Email : ' + document.getElementById('email').value + '<br> Phone : ' + document.getElementById('number').value + '<br> Message : ' + document.getElementById('message').value,
+        }).then((message) => alert('Send Successfully'));
+      }
+    </script>
   </body>
 </html>

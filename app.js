@@ -31,3 +31,5 @@ window.onscroll = () => {
 //     cursor2.classList.remove('active');
 //   };
 // });
+
+// contact
