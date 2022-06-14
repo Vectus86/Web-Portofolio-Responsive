@@ -319,15 +319,24 @@
       </div>
 
       <div class="row">
-        <form onsubmit="sendEmail(); reset(); return false;">
-          <input type="name" placeholder="Name" class="box" id="name"/>
-          <input type="email" placeholder="Email" class="box" id="email"/>
-          <input type="number" placeholder="Number" class="box" id="number"/>
+        <form data-email="calvinlawrence98@gmail.com" 
+        action="https://script.google.com/macros/s/AKfycbwdDy905E3RV6UvJXw90xbcmg_jpvbHdYPBw-yG6BKtyrDlMQSrnwNGCOqFn7zRnAhK9Q/exec" class="gform pure-form pure-form-stacked" method="POST">
+          <input type="name" placeholder="Name" class="box" id="name" name="name"/>
+          <input type="email" placeholder="Email" class="box" id="email" name="email"/>
+          <input type="number" placeholder="Number" class="box" id="phone" name="phone"/>
           
 
-          <textarea placeholder="Message" id="message" cols="30" rows="10" ></textarea>
+          <textarea placeholder="Message" id="message" cols="30" rows="10" name="message" ></textarea>
 
           <button type="submit" class="btn">Send Message</button>
+
+          <!-- Thanks Message Start -->
+          <div class="thankyou_message"><br><br>
+            <h1>Thanks for contacting us!</h1>
+            <h1>*******</h1>
+          </div>
+
+          <!-- Thanks Message End -->
         </form>
         
         <iframe
@@ -339,28 +348,15 @@
       </div>
     </section>
 
-    <!-- Contact End -->
+    <!-- Footer -->
     <footer class="foot">Created By || <span>Calvin</span>Lawrence</footer>
 
     <!-- bakc to top -->
     <a href="#home" class="gotop"><i class="fas fa-arrow-up" ></i></i></a>
 
     <script src="app.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      function sendEmail() {
-        Email.send({
-          secureToken: '5bc6df06-fb6f-422b-99a7-f25061a296fc',
-          Host: 'smtp.elasticemail.com',
-          Username: 'calvinlawrence98@gmail.com',
-          Password: 'C69832E5054AF99E3242F110386EE4BAB6EF',
-          To: 'calvinlawrence98@gmail.com',
-          From: document.getElementById('email').value,
-          Subject: 'New Contact Form Enquiry',
-          Body:
-            'Name : ' + document.getElementById('name').value + '<br> Email : ' + document.getElementById('email').value + '<br> Phone : ' + document.getElementById('number').value + '<br> Message : ' + document.getElementById('message').value,
-        }).then((message) => alert('Send Successfully'));
-      }
-    </script>
+
+    <!-- Code Script Send Email -->
+    <script data-cfasync="false" type="text/javascript" src="app.js"></script>
   </body>
 </html>

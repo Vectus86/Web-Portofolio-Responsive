@@ -764,6 +764,19 @@ button {
   font-size: 1.7rem;
   border-radius: 5px;
 }
+
+.thankyou_message {
+  background: none;
+  border: 8px solid red;
+  border-radius: 10px;
+  width: 400px;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 40px;
+  display: flex;
+  margin: 0 auto;
+}
 /* media queries  */
 @media (max-width: 991px) {
   html {
