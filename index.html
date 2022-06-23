@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   </head>
   <body>
+
+    <div id="preloader"></div>
     <!-- <div class="cursor-1"></div>
     <div class="cursor-2"></div> -->
     <div class="fas fa-bars" id="menu-bars"></div>
@@ -358,5 +360,13 @@
 
     <!-- Code Script Send Email -->
     <script data-cfasync="false" type="text/javascript" src="app.js"></script>
+
+    <script>
+      var loader = document.getElementById('preloader');
+
+      window.addEventListener('load', function () {
+        loader.style.display = 'none';
+      });
+    </script>
   </body>
 </html>
